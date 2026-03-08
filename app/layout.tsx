@@ -13,8 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Stripe-Inspired Navbar",
-  description: "A premium Stripe-style navigation bar with animated dropdowns",
+  title: "Stripe Partner Program — Claim Your $200 Startup Bonus",
+  description:
+    "Sign up for Stripe through our official partnership and get a chance to win $200 in processing credits. Quick setup, bank-grade security, and 24/7 support for startups.",
 };
 
 export default function RootLayout({
