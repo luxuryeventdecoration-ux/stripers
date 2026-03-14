@@ -373,9 +373,9 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════════════
-          SECTION 3 — BENEFITS
+          SECTION 3 — BENTO FEATURES (NEW)
       ═══════════════════════════════════════════════════ */}
-      <section className="bg-[#f8fafc] py-24">
+      <section className="bg-white py-24">
         <div className="mx-auto max-w-6xl px-6">
           <ScrollReveal>
             <p className="mb-3 text-center text-xs font-bold uppercase tracking-widest text-indigo-600">
@@ -386,38 +386,88 @@ export default function Home() {
             </h2>
           </ScrollReveal>
 
-          <div className="mt-16 grid gap-6 sm:grid-cols-2">
-            {BENEFITS.map((b, i) => (
-              <ScrollReveal key={b.title} delay={i * 100}>
-                <div
-                  className={`group relative rounded-3xl p-8 transition-all duration-300 ${b.highlight
-                    ? "bg-[#0a2540] text-white shadow-xl shadow-indigo-900/10"
-                    : "bg-white border border-slate-200 hover:border-indigo-200 hover:shadow-lg hover:shadow-slate-200/50"
-                    }`}
-                >
-                  <div
-                    className={`mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl ${b.highlight
-                      ? "bg-linear-to-br from-indigo-500 to-indigo-600 text-white shadow-inner"
-                      : "bg-indigo-50 text-indigo-600"
-                      }`}
-                  >
-                    {b.icon}
-                  </div>
-                  <h3
-                    className={`text-xl font-bold ${b.highlight ? "text-white" : "text-slate-900"
-                      }`}
-                  >
-                    {b.title}
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            {/* Top Left / Main - Pay with Kobodrop Style */}
+            <ScrollReveal delay={100} className="md:col-span-2">
+              <div className="relative h-full overflow-hidden rounded-[2rem] bg-[#e6f4fd] p-8 sm:p-12 flex flex-col sm:flex-row gap-8 items-center border border-sky-100">
+                <div className="flex-1 z-10">
+                  <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 leading-snug">
+                    Apply instantly,<br/> quick, simple and easy
                   </h3>
-                  <p
-                    className={`mt-3 text-base leading-relaxed ${b.highlight ? "text-indigo-100/90" : "text-slate-500"
-                      }`}
-                  >
-                    {b.desc}
+                  <p className="mt-4 text-slate-600 leading-relaxed font-medium">
+                    Scaling your startup has never been easier. Whether you are processing for SaaS or e-commerce, get approved within seconds and bypass initial hurdles.
                   </p>
                 </div>
-              </ScrollReveal>
-            ))}
+                <div className="flex-1 relative w-full h-[280px] sm:h-auto sm:-my-12 sm:-mr-12 shrink-0 flex justify-end">
+                   {/* eslint-disable-next-line @next/next/no-img-element */}
+                   <img 
+                     src="/apps.png" 
+                     alt="Mobile app interface" 
+                     className="absolute top-8 right-0 sm:static sm:top-auto sm:right-auto object-cover sm:object-contain object-top sm:object-right-top h-[350px] sm:h-[450px] w-auto drop-shadow-2xl"
+                   />
+                </div>
+              </div>
+            </ScrollReveal>
+
+            {/* Top Right - Bank level security Style */}
+            <ScrollReveal delay={200} className="md:col-span-1">
+              <div className="h-full rounded-[2rem] bg-[#eef0ff] p-8 sm:p-10 flex flex-col border border-indigo-50">
+                <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-indigo-100/80">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-indigo-600 text-white">
+                    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                </div>
+                <h3 className="text-2xl font-bold text-slate-900">
+                  Bank level security
+                </h3>
+                <p className="mt-4 text-slate-600 leading-relaxed font-medium">
+                  Your payments are 100% safe and secure with PCI DSS Level 1 compliance. No hassles, no glitches, full protection globally.
+                </p>
+              </div>
+            </ScrollReveal>
+
+            {/* Bottom Left - Cost reduction Style */}
+            <ScrollReveal delay={300} className="md:col-span-1">
+              <div className="h-full rounded-[2rem] bg-[#fef3dd] p-8 sm:p-10 flex flex-col border border-orange-50">
+                <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-orange-200/60">
+                  <svg className="h-6 w-6 text-amber-900" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.41 16.09V20h-2.67v-1.93c-1.71-.36-3.16-1.46-3.27-3.4h2.45c.1 1.25 1.25 1.54 2.12 1.54 1.29 0 2.39-.77 2.39-1.93 0-2.31-3.69-1.46-3.69-4.34 0-1.57 1.15-2.66 2.67-3.03V5h2.67v2.02c1.4.34 2.5 1.25 2.64 2.8h-2.35c-.14-1-1.05-1.45-1.99-1.45-.98 0-2.02.63-2.02 1.77 0 2.21 3.69 1.48 3.69 4.38 0 1.95-1.47 2.94-3.04 3.27z"/>
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-slate-900">
+                  Cost reduction
+                </h3>
+                <p className="mt-4 text-slate-600 leading-relaxed font-medium">
+                  Our official partner grant reduces initial payments maintenance and processing fees. No hidden fees.
+                </p>
+              </div>
+            </ScrollReveal>
+
+            {/* Bottom Right - Send receive money Style */}
+            <ScrollReveal delay={400} className="md:col-span-2">
+              <div className="relative h-full overflow-hidden rounded-[2rem] bg-[#eef7f9] p-8 sm:p-12 flex flex-col sm:flex-row gap-8 items-center border border-cyan-50">
+                <div className="flex-1 z-10 w-full">
+                  <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 leading-snug">
+                    Send, receive and<br/> Exchange money
+                  </h3>
+                  <p className="mt-4 text-slate-600 leading-relaxed font-medium max-w-sm">
+                    Transfers, payments all work seamlessly globally. Get your alerts immediately after a completed transaction.
+                  </p>
+                </div>
+                <div className="flex-1 relative w-full h-[200px] sm:h-auto sm:-my-12 sm:-mr-12 shrink-0 flex items-center justify-end">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img 
+                    src="/frames.png" 
+                    alt="Payment integrations" 
+                    className="absolute right-0 top-1/2 -translate-y-1/2 w-[120%] sm:w-[130%] max-w-none object-contain opacity-90"
+                  />
+                </div>
+              </div>
+            </ScrollReveal>
+
           </div>
         </div>
       </section>
