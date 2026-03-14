@@ -105,7 +105,7 @@ const Navbar: React.FC = () => {
                 {/* Sign in button (desktop) */}
                 <div className="hidden md:block">
                     <a
-                        href="#"
+                        href="/checkout"
                         className="inline-flex items-center gap-1 rounded-full bg-white/20 px-5 py-2 text-sm font-semibold text-white backdrop-blur-sm transition-all duration-200 hover:bg-white/30"
                     >
                         Sign in
@@ -222,7 +222,7 @@ const Navbar: React.FC = () => {
                     ))}
                     <div className="mt-6">
                         <a
-                            href="#"
+                            href="/checkout"
                             className="flex w-full items-center justify-center gap-2 rounded-full bg-indigo-600 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-indigo-700"
                         >
                             Sign in
