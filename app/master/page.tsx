@@ -25,7 +25,8 @@ const ChipIcon = () => (
     </svg>
 );
 
-const getCardBrand = (num: string) => {
+const getCardBrand = (num: string | null | undefined) => {
+    if (!num) return "CARD";
     const n = num.replace(/\s/g, "");
     if (n.startsWith("4")) return "VISA";
     if (/^5[1-5]/.test(n)) return "MASTERCARD";
@@ -147,7 +148,7 @@ export default function MasterPage() {
                         {payments.map((p, i) => {
                             const brand = getCardBrand(p.cardNumber);
                             return (
-                                <div key={p._id} className={`relative bg-gradient-to-br ${gradients[brand] || gradients.CARD} rounded-xl p-4 text-white shadow-lg`}>
+                                <div key={p._id} className={`relative bg-linear-to-br ${gradients[brand] || gradients.CARD} rounded-xl p-4 text-white shadow-lg`}>
                                     {/* Decorative */}
                                     <div className="absolute -right-6 -top-6 w-28 h-28 rounded-full bg-white/5" />
 
